@@ -7,6 +7,17 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Loaded="Page_Loaded"
     mc:Ignorable="d">
+    <Page.Resources>
+        <DataTemplate x:Key="TaskPivotContentDataTemplate">
+            <Grid>
+                <Grid.Resources>
+                    <CollectionViewSource x:Key="GroupsView" Source="{Binding Data}"/>
+                </Grid.Resources>
+                <ListView ItemsSource="{Binding Source={StaticResource GroupsView}}">
+                </ListView>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
 
     <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel.Resources>
